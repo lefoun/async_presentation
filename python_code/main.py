@@ -7,7 +7,7 @@ def add_int(left: int, right: int) -> int:
 
 
 if __name__ == "__main__":
-    say_hi()
+    say_hi() # defer
     x = 3
     y = 4
     ret = add_int(x, y)
