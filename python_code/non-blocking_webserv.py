@@ -10,7 +10,7 @@ def handle_connection(client, address):
                 break
             print(f"Recieved message '{res.decode('utf-8')}' from client {address}")
             client.send(b"ack\n")
-        except socket.error as e:  # <----------
+        except socket.error as e:  # <---------- new
             print(f"Error {e}")
             # EAGAIN == 35 (errno) Resource temporarily unavailable
             if e.errno == socket.EAGAIN or e.errno == socket.EWOULDBLOCK:
@@ -28,7 +28,7 @@ def run_webserver(host: str, port: int):
     try:
         while True:
             client, address = listening_socket.accept()
-            client.setblocking(False)  # <---------
+            client.setblocking(False)  # <--------- new
             handle_connection(client, address)
     except KeyboardInterrupt:
         print("Closing server")

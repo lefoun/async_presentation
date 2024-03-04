@@ -1,5 +1,5 @@
 import socket
-import select
+import asyncio
 
 
 def handle_connection(client, address) -> bool:

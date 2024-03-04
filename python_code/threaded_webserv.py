@@ -21,8 +21,8 @@ def run_webserver(host: str, port: int):
     threads = []
     try:
         while True:
-            t = Thread(target=handle_connection, args=listening_socket.accept()) # <------
-            t.start() # <-------
+            t = Thread(target=handle_connection, args=listening_socket.accept()) # <------ new
+            t.start() # <------- new
             threads.append(t)
     except KeyboardInterrupt:
         print("Closing server")
