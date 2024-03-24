@@ -5,12 +5,12 @@ def augment(a: int) -> Generator[int, None, None]:
     yield (a * 2)
 
 
-def augemented_fib_sequence(max: int) -> Generator[int, None, None]: # Generator[YieldType, SendType, ReturnType]
+def augemented_fib_sequence(max: int): 
     a = b = 1
     while a < max:
         augment(a)  # Does this yield ??
         a, b = b, a + b
-
+    return 1
 
 
 

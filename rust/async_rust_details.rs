@@ -9,7 +9,7 @@ async fn add_two(one: i32, two: i32) -> i32 {
     return one + two;
 }
 
-fn wait_on_coor() {
+fn main() {
     block_on(|| {
         let future: Future<i32> = coroutine();  // this has the necessary size
         while true {

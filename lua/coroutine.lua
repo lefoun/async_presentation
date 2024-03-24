@@ -1,3 +1,5 @@
+-- Function declarations --
+
 function greet()
     print("Hello!")
     coroutine.yield() -- Yields here
@@ -7,6 +9,8 @@ function greet()
     coroutine.yield() -- Yields here
 end
   
+-- Start of the program --
+
 greeting_coro = coroutine.create(greet)
   
 print(coroutine.status(greeting_coro))  -- Prints suspended
@@ -15,7 +19,20 @@ coroutine.resume(greeting_coro) -- Prints "Hello!"
 coroutine.resume(greeting_coro) -- Prints "Bonjour!"
 coroutine.resume(greeting_coro) -- Prints "Hola!"
 
-print(coroutine.status(greeting_coro))  -- Prints dead
+-- Prints dead (because the coroutine is dead)
+print(coroutine.status(greeting_coro))
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
